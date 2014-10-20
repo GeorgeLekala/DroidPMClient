@@ -40,7 +40,6 @@
             this.lblcommand = new System.Windows.Forms.Label();
             this.lbldb = new System.Windows.Forms.Label();
             this.cmdLogout = new System.Windows.Forms.Button();
-            this.cmdBlob = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -132,22 +131,11 @@
             this.cmdLogout.UseVisualStyleBackColor = true;
             this.cmdLogout.Click += new System.EventHandler(this.cmdLogout_Click);
             // 
-            // cmdBlob
-            // 
-            this.cmdBlob.Location = new System.Drawing.Point(119, 118);
-            this.cmdBlob.Name = "cmdBlob";
-            this.cmdBlob.Size = new System.Drawing.Size(102, 23);
-            this.cmdBlob.TabIndex = 12;
-            this.cmdBlob.Text = "Blob";
-            this.cmdBlob.UseVisualStyleBackColor = true;
-            this.cmdBlob.Click += new System.EventHandler(this.cmdBlob_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(233, 221);
-            this.Controls.Add(this.cmdBlob);
             this.Controls.Add(this.cmdLogout);
             this.Controls.Add(this.lbldb);
             this.Controls.Add(this.lblcommand);
@@ -164,6 +152,16 @@
 
         }
 
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void cmdBlob_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.Timer timer1;
@@ -177,7 +175,6 @@
         private System.Windows.Forms.Label lblcommand;
         private System.Windows.Forms.Label lbldb;
         private System.Windows.Forms.Button cmdLogout;
-        private System.Windows.Forms.Button cmdBlob;
     }
 }
 

@@ -36,39 +36,6 @@ namespace DroidPMClient
         }
 
 
-        //now use this class
-        //MAC_ADDRESS should  look like '013FA049'
-        private void WakeFunction(string MAC_ADDRESS)
-        {
-            WOLClass client = new WOLClass();
-
-            //255.255.255.255  i.e broadcast 
-            client.Connect(new IPAddress(0xffffffff), 0x2fff); // port=12287 let's use this one 
-
-            client.SetClientToBrodcastMode();
-            //set sending bites
-            int counter = 0;
-            //buffer to be send
-            byte[] bytes = new byte[1024];   // more than enough :-)
-            //first 6 bytes should be 0xFF
-            for (int y = 0; y < 6; y++)
-                bytes[counter++] = 0xFF;
-            //now repeate MAC 16 times
-            for (int y = 0; y < 16; y++)
-            {
-                int i = 0;
-                for (int z = 0; z < 6; z++)
-                {
-                    bytes[counter++] =
-                        byte.Parse(MAC_ADDRESS.Substring(i, 2),
-                        NumberStyles.HexNumber);
-                    i += 2;
-                }
-            }
-
-            //now send wake up packet
-            int reterned_value = client.Send(bytes, 1024);
-        }
 
         public void listBlob()
         {
@@ -149,7 +116,7 @@ namespace DroidPMClient
             using (var fileStream = System.IO.File.OpenRead(@"C:/Users/George/Desktop/" + txtUname.Text + "processlist.txt"))
             {
                 blockBlob.UploadFromStream(fileStream);
-            }
+            } 
 
 
         }
@@ -169,6 +136,7 @@ namespace DroidPMClient
             {
                 CommandItem t = new CommandItem();
                 t.command = "IGNORE";
+                t.terminateprocess = "IGNORE";
                 return updateCommand(txtUname.Text, t);
             }
 
@@ -194,8 +162,6 @@ namespace DroidPMClient
             lblcommand.Text = "In Timer Tick : " + count++ + " : " + command;
             ExecuteCommand(command);
             ExecuteCommand(process);
-
-
         }
 
         public void updateProcesses()
@@ -218,8 +184,11 @@ namespace DroidPMClient
             else if (command.Equals("SLEEP"))
             {
                 resetCommand(command);
+                updateProcesses();
+                //System.Diagnostics.Process.Start("powercfg", "-hibernate off"); // Turn off hibernation mode setting.
+                //System.Diagnostics.Process.Start("rundll32.exe", "powrprof.dll,SetSuspendState 0,1,0"); // Send the computer to sleep
                 Application.SetSuspendState(PowerState.Suspend, true, true);
-                Process.Start("shutdown", "/s /t 3 /f");
+               // Process.Start("shutdown", "/s /t 3 /f");
 
             }
             else if (command.Equals("SHUTDOWN"))
@@ -245,12 +214,10 @@ namespace DroidPMClient
             }
             else if (command.Equals("LOCK"))
             {
-
                 resetCommand(command);
                 updateProcesses();
                 lblprog.Text = "IN LOCK : " + resetCommand(command);
                 bool result = LockWorkStation();
-
 
             }
             else if (command.Equals("DEFAULT"))
@@ -535,15 +502,5 @@ namespace DroidPMClient
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void cmdBlob_Click(object sender, EventArgs e)
-        {
-            //GenerateProcessList();
-            //uploadBlob();
-            //downloadBlob();
-            // ExecuteCommand("TERMINATE Everything");
-        }
-
-
     }
 }

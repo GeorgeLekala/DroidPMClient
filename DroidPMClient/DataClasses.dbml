@@ -1,36 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="locationawarepm_db" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=q0qcqraoho.database.windows.net;Initial Catalog=locationawarepm_db;User ID=locationawarepm;Connect Timeout=60" SettingsObjectName="DroidPMClient.Properties.Settings" SettingsPropertyName="locationawarepm_dbConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="locationawarepm.BlobBlobs" Member="BlobBlobs">
-    <Type Name="BlobBlob">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.BlobContainers" Member="BlobContainers">
-    <Type Name="BlobContainer">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.BookingItem" Member="BookingItems">
-    <Type Name="BookingItem">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="Day" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="droplocation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Month" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="npassengers" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="pickuplocation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Year" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="locationawarepm.CommandItem" Member="CommandItems">
     <Type Name="CommandItem">
       <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -47,75 +16,6 @@
       <Column Name="lastname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="computername" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="terminateprocess" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.Registration" Member="Registrations">
-    <Type Name="Registration">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="registrationId" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.ShuttleServices" Member="ShuttleServices">
-    <Type Name="ShuttleService">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="companyName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="driverImage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="driverName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="rating" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="seatNumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="tripPrice" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="vehicleName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="vehicleImage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.TodoItem" Member="TodoItems">
-    <Type Name="TodoItem">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="complete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="handle" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Command" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="locationawarepm.UserRegistration" Member="UserRegistrations">
-    <Type Name="UserRegistration">
-      <Column Name="id" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="[__createdAt]" Member="__createdAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
-      <Column Name="[__updatedAt]" Member="__updatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
-      <Column Name="[__version]" Member="__version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CardMM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="creditcardnumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CVV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CardYY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="firstname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lastname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="phonenumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[Table]" Member="Tables">
-    <Type Name="Table">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Command" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
